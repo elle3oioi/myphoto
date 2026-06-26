@@ -1,0 +1,45 @@
+/*
+  Dylan Hernandez · Holy Christening Website
+  style.css — Additional overrides & enhancements
+  All core styles are embedded in index.html for portability.
+  Place this file alongside index.html if you want to extend styles.
+*/
+
+/* ═══════════════════════════════════
+   PRINT STYLES
+═══════════════════════════════════ */
+@media print {
+  #main-nav, #music-player, #lightbox, #particles, .hero-scroll { display: none !important; }
+  body { background: white; color: #062850; }
+  .section-title, .section-sub, .guestbook-quote { color: #062850 !important; }
+}
+
+/* ═══════════════════════════════════
+   REDUCED MOTION
+═══════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ═══════════════════════════════════
+   HIGH CONTRAST / ACCESSIBILITY
+═══════════════════════════════════ */
+@media (prefers-color-scheme: light) {
+  /* Site is designed dark-first for the luxury blue look */
+  /* No overrides — intentional dark design */
+}
+
+/* Focus rings for keyboard users */
+:focus-visible {
+  outline: 2px solid #3D8BFF;
+  outline-offset: 3px;
+}
+button:focus-visible, a:focus-visible {
+  outline: 2px solid #7BB8FF;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
